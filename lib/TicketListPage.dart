@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/ProfilePage.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'SegmentedControl.dart';
@@ -19,6 +20,12 @@ class _TicketListPageState extends State<TicketListPage> {
         leading: IconButton(
           alignment: Alignment.topLeft,
           icon: SvgPicture.asset('assets/icons/backBlack.svg'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfilePage()),
+            );
+          },
         ),
       ),
       body: Column(
