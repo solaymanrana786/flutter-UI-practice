@@ -27,33 +27,34 @@ class _TicketListPageState extends State<TicketListPage> {
               alignment: Alignment.topCenter,
               padding: EdgeInsets.only(left: 16.0, right: 16.0),
               child: Container(
-                height: 40.0,
+                height: 80.0,
                 // color: Colors.red,
                 child: SegmentedControl(),
               )),
           Container(
               padding:
-                  EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
+                  EdgeInsets.only(left: 70, right: 40, top: 10, bottom: 10),
               child: Row(
                 children: [
                   Text(
                     'Dates',
                     style: TextStyle(
-                      fontSize: 17.0, // insert your font size here
+                      fontSize: 15.0,
                     ),
                   ),
                   Spacer(),
+                  SizedBox(width: 20),
                   Text(
                     'QTY',
                     style: TextStyle(
-                      fontSize: 17.0, // insert your font size here
+                      fontSize: 15.0,
                     ),
                   ),
                   Spacer(),
                   Text(
                     'Bid Amount',
                     style: TextStyle(
-                      fontSize: 17.0, // insert your font size here
+                      fontSize: 15.0,
                     ),
                   ),
                 ],
@@ -120,26 +121,27 @@ Widget _myListView(BuildContext context) {
     "1",
   ];
   final amount = [
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
+    "\$500",
   ];
 
   return ListView.builder(
@@ -160,14 +162,16 @@ Column list(
     List<String> dates, int index, List<String> qty, List<String> amount) {
   return Column(children: <Widget>[
     Container(
-        padding: EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
+        padding: EdgeInsets.only(left: 20.0, right: 40, top: 10, bottom: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(dates[index]),
             Spacer(),
             Text(qty[index]),
-            Spacer(),
+            Spacer(
+              flex: 2,
+            ),
             Text(amount[index])
           ],
         )),

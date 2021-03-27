@@ -15,11 +15,15 @@ class _SegmentedControlState extends State<SegmentedControl> {
       height: double.infinity,
       width: double.infinity,
       child: CupertinoSlidingSegmentedControl(
+          padding: EdgeInsets.all(5),
           groupValue: segmentedControlValue,
           backgroundColor: Color.fromRGBO(242, 243, 248, 1),
           thumbColor: Color.fromRGBO(244, 112, 101, 1),
           children: const <int, Widget>{
-            0: Text('Sales'),
+            0: Padding(
+              padding: EdgeInsets.all(5),
+              child: Text('Sales'),
+            ),
             1: Text('Asks'),
             2: Text('Bids')
           },
