@@ -11,6 +11,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     var topImageSize = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -84,6 +85,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               )
             ],
+          ),
+          Container(
+            padding: EdgeInsets.all(0),
+            color: Colors.red,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Image(image: AssetImage("assets/images/bg.png"))],
+              ),
+            ),
           )
         ],
       ),
