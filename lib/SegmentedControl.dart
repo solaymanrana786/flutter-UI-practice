@@ -20,12 +20,18 @@ class _SegmentedControlState extends State<SegmentedControl> {
           backgroundColor: Color.fromRGBO(242, 243, 248, 1),
           thumbColor: Color.fromRGBO(244, 112, 101, 1),
           children: const <int, Widget>{
-            0: Padding(
-              padding: EdgeInsets.all(5),
-              child: Text('Sales'),
+            0: Text(
+              'Sales',
+              style: TextStyle(fontSize: 17),
             ),
-            1: Text('Asks'),
-            2: Text('Bids')
+            1: Text(
+              'Asks',
+              style: TextStyle(fontSize: 17),
+            ),
+            2: Text(
+              'Bids',
+              style: TextStyle(fontSize: 17),
+            )
           },
           onValueChanged: (value) {
             setState(() {

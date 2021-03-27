@@ -161,6 +161,7 @@ Widget _myListView(BuildContext context) {
 Column list(
     List<String> dates, int index, List<String> qty, List<String> amount) {
   return Column(children: <Widget>[
+    Divider(),
     Container(
         padding: EdgeInsets.only(left: 20.0, right: 40, top: 10, bottom: 10),
         child: Row(
@@ -175,6 +176,6 @@ Column list(
             Text(amount[index])
           ],
         )),
-    Divider(),
+    // Divider(),
   ]);
 }
