@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: white,
+        //scaffoldBackgroundColor: white,
         primarySwatch: white,
       ),
       home: TicketListPage(),

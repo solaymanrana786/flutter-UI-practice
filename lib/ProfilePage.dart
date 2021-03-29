@@ -9,95 +9,74 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    var topImageSize = MediaQuery.of(context).size;
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color.fromRGBO(102, 74, 152, 1),
+                Color.fromRGBO(5, 17, 89, 1),
+              ],
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 2,
-        selectedItemColor: Colors.amber[800],
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              Image(image: AssetImage('assets/images/profileBg.png')),
-              Padding(
-                padding: const EdgeInsets.only(top: 40, right: 20, left: 20),
-                child: Container(
-                  // color: Colors.red,
-                  padding: EdgeInsets.all(0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Expanded(
-                        child: IconButton(
-                          alignment: Alignment.topLeft,
-                          icon: SvgPicture.asset('assets/icons/backBlack.svg'),
-                          onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(builder: (context) => ProfilePage()),
-                            // );
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                      ),
-                      Expanded(
-                          child: Text(
-                        "Profile",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                      Expanded(
-                        child: FlatButton(
-                            color: Colors.transparent,
-                            textColor: Colors.red,
-                            padding: EdgeInsets.all(5),
-                            splashColor: Colors.transparent,
-                            onPressed: () {
-                              /*...*/
-                            },
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Text("Save",
-                                  style: TextStyle(fontSize: 12.0),
-                                  textAlign: TextAlign.center),
-                            )),
-                      )
-                    ],
-                  ),
+        ),
+        Stack(
+          alignment: Alignment.center,
+          overflow: Overflow.visible,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 300),
+              //color: Colors.white,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
                 ),
-              )
-            ],
-          ),
-          Container(
-            padding: EdgeInsets.all(0),
-            color: Colors.red,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Image(image: AssetImage("assets/images/bg.png"))],
               ),
             ),
-          )
-        ],
-      ),
+            Positioned(
+              top: 250,
+              child: Container(
+                //color: Colors.white,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/profilePic.png"),
+                  ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
+                  ),
+                ),
+                height: 100,
+                width: 100,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: Colors.black.withOpacity(.6),
+                      ),
+                    ),
+                    Icon(
+                      Icons.camera_alt,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

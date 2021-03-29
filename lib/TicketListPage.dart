@@ -15,6 +15,7 @@ class _TicketListPageState extends State<TicketListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text('Tickets'),
         elevation: 0,
         leading: IconButton(
