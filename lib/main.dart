@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/ProfilePage.dart';
 import 'package:flutter_application_1/TicketListPage.dart';
+// import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // FlutterStatusbarcolor.setStatusBarColor(Colors.red);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
